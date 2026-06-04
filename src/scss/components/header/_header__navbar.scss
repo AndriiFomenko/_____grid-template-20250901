@@ -7,13 +7,14 @@
     gap: $gap;
     grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
 
-    @include unlist;
+    @include unlist(0 (-$gap-sm) 0 0);
   }
   &-item {
   }
   &-link {
     padding: $gap $gap-sm;
     letter-spacing: 0.085em;
+    font-size: 1.125rem;
     transition: color 0.3s;
 
     &:hover,
