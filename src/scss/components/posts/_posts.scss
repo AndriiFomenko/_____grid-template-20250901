@@ -1,1 +1,84 @@
 @use "../../abstracts" as *;
+
+.posts {
+  padding: $gap-x3 0;
+
+  background-color: $color-white;
+
+  @include sm {
+    padding: $gap-x2 0;
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    margin-bottom: $gap-x2;
+
+    color: $color-primary;
+
+    font-family: $font-header;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include lg-min {
+      font-size: 2.5rem;
+    }
+    @include lg {
+      @include sm-min {
+        margin-bottom: $gap-lg;
+
+        font-size: 2rem;
+      }
+    }
+    @include sm {
+      margin-bottom: $gap;
+
+      text-align: center;
+
+      font-size: 1.5rem;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: $gap;
+
+    margin-bottom: $gap-x2;
+
+    @include lg-min {
+      grid-template-areas: "p1 p1 p2 p3"
+      "p4 p5 p6 p6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include lg-md {
+      grid-template-areas: "p1 p1 p2"
+      "p3 p4 p4"
+      "p5 p5 p6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-areas: "p1 p2"
+      "p3 p4"
+      "p5 p6";
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include sm {
+      margin-bottom: $gap;
+
+      grid-template-areas: "p1"
+      "p2"
+      "p3"
+      "p4"
+      "p5"
+      "p6";
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+}
