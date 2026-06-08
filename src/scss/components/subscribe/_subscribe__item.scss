@@ -1,1 +1,67 @@
 @use "../../abstracts" as *;
+
+.subscribe__item {
+  width: 100%;
+  height: 60px;
+  padding: 0 25px;
+
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+
+  color: $color-white;
+  border: 2px solid transparent;
+  border-bottom-color: $color-white;
+  border-radius: 0;
+  background-color: rgba($color-white, 0.08);
+
+  font-family: $font-main;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: normal;
+
+  @include sm {
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  &::placeholder {
+    color: rgba($color-white, 0.6);
+
+    font-family: $font-main;
+    font-weight: 300;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-white;
+    outline: none;
+  }
+
+  &--name {
+    grid-area: name;
+  }
+
+  &--email {
+    grid-area: email;
+  }
+
+  &--submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    font-family: $font-main;
+    font-weight: 400;
+
+    grid-area: button;
+
+    &:hover,
+    &:focus {
+      border-color: $color-white;
+      background-color: $color-accent;
+    }
+  }
+}
