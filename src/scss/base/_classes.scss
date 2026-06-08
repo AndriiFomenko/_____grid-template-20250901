@@ -38,9 +38,17 @@
     }
   }
   &--primary {
-    border-color: $color-white;
-
+    min-height: 60px;
+    border-color: $color-primary;
+    background-color: rgb($color-primary, 0.8);
     font-size: 1.125rem;
+
+    @include sm-min {
+      min-width: 350px;
+    }
+    @include sm {
+      min-width: 100%;
+    }
   }
 }
 .visually-hidden {
